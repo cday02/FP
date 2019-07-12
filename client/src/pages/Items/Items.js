@@ -5,14 +5,13 @@ import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import SteamAPI from "../../utils/SteamAPI";
 
 class Items extends Component {
   // Setting our component's initial state
   state = {
     items: [],
-    title: "",
-    author: "",
-    synopsis: ""
+    search: ""
   };
 
   // When the component mounts, load all books and save them to this.state.books
@@ -35,6 +34,20 @@ class Items extends Component {
       .then(res => this.loadBooks())
       .catch(err => console.log(err));
   };
+
+  apiSearch = event => {
+    event.preventDefault();
+    if (this.state.search) {
+      SteamAPI.searchItems(
+          this.state.search
+      )
+        .then(res => this.setState({items:res.data.items
+        }))
+        .catch(err => console.log(err));
+    }
+  };
+
+  
 
   // Handles updating component state when the user types into the input field
   handleInputChange = event => {
