@@ -1,5 +1,5 @@
 import React from "react";
-import Items from "./pages/Items";
+import Items from "./pages/Items/Items";
 import Nav from "./components/Nav";
 
 function App() {

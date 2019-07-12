@@ -9,7 +9,7 @@ import { Input, TextArea, FormBtn } from "../../components/Form";
 class Items extends Component {
   // Setting our component's initial state
   state = {
-    books: [],
+    items: [],
     title: "",
     author: "",
     synopsis: ""
