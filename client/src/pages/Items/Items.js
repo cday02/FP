@@ -6,7 +6,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
-class Books extends Component {
+class Items extends Component {
   // Setting our component's initial state
   state = {
     books: [],
@@ -17,21 +17,21 @@ class Books extends Component {
 
   // When the component mounts, load all books and save them to this.state.books
   componentDidMount() {
-    this.loadBooks();
+    this.loadItems();
   }
 
   // Loads all books  and sets them to this.state.books
-  loadBooks = () => {
-    API.getBooks()
+  loadItems = () => {
+    API.getItems()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+        this.setState({ items: res.data, title: "", author: "", synopsis: "" })
       )
       .catch(err => console.log(err));
   };
 
   // Deletes a book from the database with a given id, then reloads books from the db
-  deleteBook = id => {
-    API.deleteBook(id)
+  deleteItem = id => {
+    API.deleteItem(id)
       .then(res => this.loadBooks())
       .catch(err => console.log(err));
   };
@@ -49,7 +49,7 @@ class Books extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.title && this.state.author) {
-      API.saveBook({
+      API.saveItem({
         title: this.state.title,
         author: this.state.author,
         synopsis: this.state.synopsis
@@ -98,17 +98,17 @@ class Books extends Component {
             <Jumbotron>
               <h1>Books On My List</h1>
             </Jumbotron>
-            {this.state.books.length ? (
+            {this.state.items.length ? (
               <List>
-                {this.state.books.map(book => {
+                {this.state.items.map(item => {
                   return (
-                    <ListItem key={book._id}>
-                      <a href={"/books/" + book._id}>
+                    <ListItem key={item._id}>
+                      <a href={"/items/" + item._id}>
                         <strong>
-                          {book.title} by {book.author}
+                          {item.title} by {item.author}
                         </strong>
                       </a>
-                      <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                      <DeleteBtn onClick={() => this.deleteItem(item._id)} />
                     </ListItem>
                   );
                 })}
@@ -123,4 +123,4 @@ class Books extends Component {
   }
 }
 
-export default Books;
+export default Items;
