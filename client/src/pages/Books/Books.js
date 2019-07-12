@@ -5,6 +5,7 @@ import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import "./Books.css"
 
 class Books extends Component {
   // Setting our component's initial state
@@ -63,42 +64,13 @@ class Books extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>What Books Should I Read?</h1>
-            </Jumbotron>
-            <form>
-              <Input
-                value={this.state.title}
-                onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-              <Input
-                value={this.state.author}
-                onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
-              />
-              <TextArea
-                value={this.state.synopsis}
-                onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
-              />
-              <FormBtn
-                disabled={!(this.state.author && this.state.title)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit Book
-              </FormBtn>
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
+          <Col
+          className="margin"
+          size="md-6 sm-12">
             <Jumbotron>
               <h1>Books On My List</h1>
             </Jumbotron>
-            {this.state.books.length ? (
+            {/*{this.state.books.length ? (
               <List>
                 {this.state.books.map(book => {
                   return (
@@ -116,6 +88,7 @@ class Books extends Component {
             ) : (
               <h3>No Results to Display</h3>
             )}
+            */}
           </Col>
         </Row>
       </Container>

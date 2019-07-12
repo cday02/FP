@@ -117,7 +117,7 @@ export default function Nav() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Mini variant drawer
+            b44Skins
           </Typography>
         </Toolbar>
       </AppBar>
