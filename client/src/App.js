@@ -1,12 +1,10 @@
 import React from "react";
-import Books from "./pages/Books";
-import Nav from "./components/Nav";
+import Header from "./pages/Header"
 
 function App() {
   return (
     <div>
-      <Nav />
-      <Books />
+      <Header />
     </div>
   );
 }
