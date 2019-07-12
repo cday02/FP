@@ -39,15 +39,16 @@ class Items extends Component {
     event.preventDefault();
     if (this.state.search) {
       SteamAPI.searchItems(
-          this.state.search
+        this.state.search
       )
-        .then(res => this.setState({items:res.data.items
+        .then(res => this.setState({
+          items: res.data.items
         }))
         .catch(err => console.log(err));
     }
   };
 
-  
+
 
   // Handles updating component state when the user types into the input field
   handleInputChange = event => {
@@ -127,8 +128,8 @@ class Items extends Component {
                 })}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
-            )}
+                <h3>No Results to Display</h3>
+              )}
           </Col>
         </Row>
       </Container>
