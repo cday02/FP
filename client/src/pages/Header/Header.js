@@ -91,45 +91,27 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const sections = [
-  'Featured',
-  'Skins',
-  'Inventory',
-  'Contact',
-  'About',
+  {name:'Featured', route:'/featured'},
+  {name:'Skins', route:'/skins'},
+  {name:'Inventory', route:'/inventory'},
+  {name:'Contact', route:'/contact'},
+  {name:'About', route:'/about'},
 
 ];
 
 const featuredPosts = [
   {
     title: 'Featured post',
-    date: 'Nov 12',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      'Test',
   },
   {
     title: 'Post title',
-    date: 'Nov 11',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      'testing',
   },
 ];
 
-const archives = [
-  'March 2020',
-  'February 2020',
-  'January 2020',
-  'December 2019',
-  'November 2019',
-  'October 2019',
-  'September 2019',
-  'August 2019',
-  'July 2019',
-  'June 2019',
-  'May 2019',
-  'April 2019',
-];
-
-const social = ['GitHub', 'Twitter', 'Facebook'];
 
 export default function Blog() {
   const classes = useStyles();
@@ -162,12 +144,12 @@ export default function Blog() {
             <Link
               color="inherit"
               noWrap
-              key={section}
+              key={section.name}
               variant="body2"
-              href="#"
+              to={section.route}
               className={classes.toolbarLink}
             >
-              {section}
+              {section.name}
             </Link>
           ))}
         </Toolbar>
@@ -187,11 +169,10 @@ export default function Blog() {
               <Grid item md={6}>
                 <div className={classes.mainFeaturedPostContent}>
                   <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                    Title of a longer featured blog post
+                    Title
                   </Typography>
                   <Typography variant="h5" color="inherit" paragraph>
-                    Multiple lines of text that form the lede, informing new readers quickly and
-                    efficiently about what&apos;s most interesting in this post&apos;s contents.
+                    asdfasdfasdfasdfasdf
                   </Typography>
                   <Link variant="subtitle1" href="#">
                     Continue reading…
