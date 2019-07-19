@@ -22,8 +22,9 @@ componentDidMount() {
   render(){
     const {type, rarity}=this.state.items
     return(
-    <div>
-    </div>
+    <>
+    <h1>test</h1>
+    </>
     )
   }
 }

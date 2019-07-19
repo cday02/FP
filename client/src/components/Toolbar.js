@@ -12,7 +12,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
-import Link from '@material-ui/core/Link';
+import {Link} from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
@@ -139,14 +139,7 @@ const useStyles = makeStyles(theme => ({
           </Toolbar>
           <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
             {sections.map(section => (
-              <Link
-                color="inherit"
-                noWrap
-                key={section.name}
-                variant="body2"
-                to={section.route}
-                className={classes.toolbarLink}
-              >
+              <Link to={section.route}>
                 {section.name}
               </Link>
             ))}
