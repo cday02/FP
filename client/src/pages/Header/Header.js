@@ -96,6 +96,7 @@ const sections = [
   {name:'Inventory', route:'/inventory'},
   {name:'Contact', route:'/contact'},
   {name:'About', route:'/about'},
+  {name:'Home', rout: '/'}
 
 ];
 
@@ -119,8 +120,8 @@ export default function Blog() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth="lg">
-        <Toolbar className={classes.toolbar}>
+      * <Container maxWidth="lg">
+        {/* <Toolbar className={classes.toolbar}>
           <Button size="small">Steam Market</Button>
           <Typography
             component="h2"
@@ -152,7 +153,7 @@ export default function Blog() {
               {section.name}
             </Link>
           ))}
-        </Toolbar>
+        </Toolbar> */}
         <main>
           {/* Main featured post */}
           <Paper className={classes.mainFeaturedPost}>
