@@ -90,15 +90,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const sections = [
-  {name:'Featured', route:'/'},
-  {name:'Skins', route:'/skins'},
-  {name:'Inventory', route:'/inventory'},
-  {name:'Contact', route:'/contact'},
-  {name:'About', route:'/about'},
-  {name:'Home', rout: '/'}
+// const sections = [
+//   {name:'Featured', route:''},
+//   {name:'Skins', route:'/skins'},
+//   {name:'Inventory', route:'/inventory'},
+//   {name:'Contact', route:'/contact'},
+//   {name:'About', route:'/about'},
+//   {name:'Home', rout: '/'}
 
-];
+// ];
 
 const featuredPosts = [
   // {
@@ -185,9 +185,12 @@ export default function Blog() {
           {/* Sub featured posts */}
           <Grid container spacing={4} className={classes.cardGrid}>
             {featuredPosts.map(post => (
-              <Grid item key={post.title} xs={12} md={6}>
+              <Grid
+              style={{marginLeft: 300}}
+              item key={post.title} xs={12} md={6}>
                 <CardActionArea component="a" href="https://store.steampowered.com/news/">
-                  <Card className={classes.card}>
+                  <Card 
+                    className={classes.card}>
                     <div className={classes.cardDetails}>
                       <CardContent>
                         <Typography component="h2" variant="h5">

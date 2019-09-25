@@ -92,7 +92,7 @@ const useStyles = makeStyles(theme => ({
   }));
   
   const sections = [
-    {name:'Featured', route:'/featured'},
+    {name:'Home', route:'/'},
     {name:'Skins', route:'/skins'},
     {name:'Inventory', route:'/inventory'},
     {name:'Contact', route:'/contact'},
