@@ -91,45 +91,30 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const sections = [
-  'Featured',
-  'Skins',
-  'Inventory',
-  'Contact',
-  'About',
+  {name:'Featured', route:'/'},
+  {name:'Skins', route:'/skins'},
+  {name:'Inventory', route:'/inventory'},
+  {name:'Contact', route:'/contact'},
+  {name:'About', route:'/about'},
+  {name:'Home', rout: '/'}
 
 ];
 
 const featuredPosts = [
+  // {
+  //   title: 'Battalion esports',
+  //   link: '',
+  //   description:
+  //     '',
+  // },
   {
-    title: 'Featured post',
-    date: 'Nov 12',
+    title: 'Steam News',
+    href: 'https://store.steampowered.com/news/',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-  },
-  {
-    title: 'Post title',
-    date: 'Nov 11',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      '',
   },
 ];
 
-const archives = [
-  'March 2020',
-  'February 2020',
-  'January 2020',
-  'December 2019',
-  'November 2019',
-  'October 2019',
-  'September 2019',
-  'August 2019',
-  'July 2019',
-  'June 2019',
-  'May 2019',
-  'April 2019',
-];
-
-const social = ['GitHub', 'Twitter', 'Facebook'];
 
 export default function Blog() {
   const classes = useStyles();
@@ -137,8 +122,8 @@ export default function Blog() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth="lg">
-        <Toolbar className={classes.toolbar}>
+      * <Container maxWidth="lg">
+        {/* <Toolbar className={classes.toolbar}>
           <Button size="small">Steam Market</Button>
           <Typography
             component="h2"
@@ -162,15 +147,15 @@ export default function Blog() {
             <Link
               color="inherit"
               noWrap
-              key={section}
+              key={section.name}
               variant="body2"
-              href="#"
+              to={section.route}
               className={classes.toolbarLink}
             >
-              {section}
+              {section.name}
             </Link>
           ))}
-        </Toolbar>
+        </Toolbar> */}
         <main>
           {/* Main featured post */}
           <Paper className={classes.mainFeaturedPost}>
@@ -187,15 +172,11 @@ export default function Blog() {
               <Grid item md={6}>
                 <div className={classes.mainFeaturedPostContent}>
                   <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                    Title of a longer featured blog post
+                    Battalion 1944 Skin Marketplace
                   </Typography>
                   <Typography variant="h5" color="inherit" paragraph>
-                    Multiple lines of text that form the lede, informing new readers quickly and
-                    efficiently about what&apos;s most interesting in this post&apos;s contents.
+                    Shop here.
                   </Typography>
-                  <Link variant="subtitle1" href="#">
-                    Continue reading…
-                  </Link>
                 </div>
               </Grid>
             </Grid>
@@ -205,7 +186,7 @@ export default function Blog() {
           <Grid container spacing={4} className={classes.cardGrid}>
             {featuredPosts.map(post => (
               <Grid item key={post.title} xs={12} md={6}>
-                <CardActionArea component="a" href="#">
+                <CardActionArea component="a" href="https://store.steampowered.com/news/">
                   <Card className={classes.card}>
                     <div className={classes.cardDetails}>
                       <CardContent>
@@ -218,7 +199,7 @@ export default function Blog() {
                         <Typography variant="subtitle1" paragraph>
                           {post.description}
                         </Typography>
-                        <Typography variant="subtitle1" color="primary">
+                          <Typography variant="subtitle1" color="primary">
                           Continue reading...
                         </Typography>
                       </CardContent>
@@ -226,7 +207,7 @@ export default function Blog() {
                     <Hidden xsDown>
                       <CardMedia
                         className={classes.cardMedia}
-                        image="https://steamcdn-a.akamaihd.net/steam/apps/489940/header.jpg?t=1558714329"
+                        image="http://www.userlogos.org/files/logos/jumpordie/steam_02.png"
                         title="Image title"
                       />
                     </Hidden>
@@ -243,7 +224,7 @@ export default function Blog() {
       <footer className={classes.footer}>
         <Container maxWidth="lg">
           <Typography variant="h6" align="center" gutterBottom>
-            Batallion 1944 Skins
+            Battalion 1944 Skins
           </Typography>
           <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
             A functional public gaming market app designed for educational purposes only.
