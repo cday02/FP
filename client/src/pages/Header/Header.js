@@ -91,7 +91,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const sections = [
-  {name:'Featured', route:'/featured'},
+  {name:'Featured', route:'/'},
   {name:'Skins', route:'/skins'},
   {name:'Inventory', route:'/inventory'},
   {name:'Contact', route:'/contact'},
@@ -101,15 +101,17 @@ const sections = [
 ];
 
 const featuredPosts = [
+  // {
+  //   title: 'Battalion esports',
+  //   link: '',
+  //   description:
+  //     '',
+  // },
   {
-    title: 'Featured post',
+    title: 'Steam News',
+    href: 'https://store.steampowered.com/news/',
     description:
-      'Test',
-  },
-  {
-    title: 'Post title',
-    description:
-      'testing',
+      '',
   },
 ];
 
@@ -170,14 +172,11 @@ export default function Blog() {
               <Grid item md={6}>
                 <div className={classes.mainFeaturedPostContent}>
                   <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                    Title
+                    Battalion 1944 Skin Marketplace
                   </Typography>
                   <Typography variant="h5" color="inherit" paragraph>
-                    asdfasdfasdfasdfasdf
+                    Shop here.
                   </Typography>
-                  <Link variant="subtitle1" href="#">
-                    Continue reading…
-                  </Link>
                 </div>
               </Grid>
             </Grid>
@@ -187,7 +186,7 @@ export default function Blog() {
           <Grid container spacing={4} className={classes.cardGrid}>
             {featuredPosts.map(post => (
               <Grid item key={post.title} xs={12} md={6}>
-                <CardActionArea component="a" href="#">
+                <CardActionArea component="a" href="https://store.steampowered.com/news/">
                   <Card className={classes.card}>
                     <div className={classes.cardDetails}>
                       <CardContent>
@@ -200,7 +199,7 @@ export default function Blog() {
                         <Typography variant="subtitle1" paragraph>
                           {post.description}
                         </Typography>
-                        <Typography variant="subtitle1" color="primary">
+                          <Typography variant="subtitle1" color="primary">
                           Continue reading...
                         </Typography>
                       </CardContent>
@@ -208,7 +207,7 @@ export default function Blog() {
                     <Hidden xsDown>
                       <CardMedia
                         className={classes.cardMedia}
-                        image="https://steamcdn-a.akamaihd.net/steam/apps/489940/header.jpg?t=1558714329"
+                        image="http://www.userlogos.org/files/logos/jumpordie/steam_02.png"
                         title="Image title"
                       />
                     </Hidden>
@@ -225,7 +224,7 @@ export default function Blog() {
       <footer className={classes.footer}>
         <Container maxWidth="lg">
           <Typography variant="h6" align="center" gutterBottom>
-            Batallion 1944 Skins
+            Battalion 1944 Skins
           </Typography>
           <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
             A functional public gaming market app designed for educational purposes only.

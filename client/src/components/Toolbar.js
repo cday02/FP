@@ -16,6 +16,8 @@ import {Link} from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
+import { link } from 'fs';
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -113,13 +115,16 @@ const useStyles = makeStyles(theme => ({
 
   export default function Blog() {
     const classes = useStyles();
+
   
     return (
       <React.Fragment>
         <CssBaseline />
         <Container maxWidth="lg">
           <Toolbar className={classes.toolbar}>
+            <a href="https://steamcommunity.com/market/search?appid=489940">
             <Button size="small">Steam Market</Button>
+            </a>
             <Typography
               component="h2"
               variant="h5"
